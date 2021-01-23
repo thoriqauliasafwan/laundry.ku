@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2021 at 02:30 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- Waktu pembuatan: 23 Jan 2021 pada 03.01
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,17 +35,17 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`nomor_hp`, `nama`, `alamat`, `username`) VALUES
 ('012098892983', 'admin', 'Jember', 'admin'),
-('123456789019', 'toriq', 'Ponorogo', 'toriq');
+('123456789019', 'toriq', 'Ponorogo', 'thoriq');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_cuci`
+-- Struktur dari tabel `jenis_cuci`
 --
 
 CREATE TABLE `jenis_cuci` (
@@ -55,7 +55,7 @@ CREATE TABLE `jenis_cuci` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jenis_cuci`
+-- Dumping data untuk tabel `jenis_cuci`
 --
 
 INSERT INTO `jenis_cuci` (`id_jenis`, `pilihan_cuci`, `harga_cuci`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `jenis_cuci` (`id_jenis`, `pilihan_cuci`, `harga_cuci`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `karyawan`
+-- Struktur dari tabel `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -77,17 +77,17 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `karyawan`
+-- Dumping data untuk tabel `karyawan`
 --
 
 INSERT INTO `karyawan` (`nomor_hp`, `nama`, `alamat`, `username`) VALUES
-('098123890321', 'bug', 'bug', 'bug'),
-('123456789012', 'Fira Dwi', 'Bondowoso', 'fira');
+('0856793580285', 'Afan ', 'Jalan Kalimantan', 'afan'),
+('081359665050', 'Karyawan Laundry', 'Jalan Mastrip', 'karyawan');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket`
+-- Struktur dari tabel `paket`
 --
 
 CREATE TABLE `paket` (
@@ -98,7 +98,7 @@ CREATE TABLE `paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `paket`
+-- Dumping data untuk tabel `paket`
 --
 
 INSERT INTO `paket` (`id_paket`, `nama_paket`, `kelipatan_harga`, `durasi`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `paket` (`id_paket`, `nama_paket`, `kelipatan_harga`, `durasi`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -118,7 +118,7 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`nama_pelanggan`, `alamat_pelanggan`, `nomor_hp`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `pelanggan` (`nama_pelanggan`, `alamat_pelanggan`, `nomor_hp`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -149,15 +149,10 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `tanggal_masuk`, `tanggal_selesai`, `nama_pelanggan`, `berat`, `id_jenis`, `id_paket`, `harga_total`, `status_bayar`, `status_laundry`, `username`) VALUES
-(43, '2020-12-17', NULL, 'Dana', 7, 'jp1', 'p01', 21000, 'Lunas', 'Selesai', ''),
-(51, '2020-12-17', NULL, 'toriq', 3, 'jp1', 'p01', 9000, 'Lunas', 'Selesai', ''),
-(52, '2020-12-17', NULL, 'toriq', 4, 'jp1', 'p01', 12000, 'Lunas', 'Baru', ''),
-(53, '2021-01-21', NULL, 'toriq', 10, 'jp1', 'p01', 30000, 'Lunas', 'Selesai', ''),
-(56, '2021-01-23', NULL, 'Fira', 12, 'jp1', 'p01', 36000, 'Belum bayar', 'Selesai', ''),
 (57, '2021-01-23', '2021-01-26', 'toriq', 3, 'jp1', 'p01', 9000, 'Belum bayar', 'Baru', ''),
 (58, '2021-01-23', '2021-01-26', 'Dwi', 7, 'jp2', 'p01', 35000, 'Lunas', 'Baru', ''),
 (59, '2021-01-23', '2021-01-24', 'Dwi', 5, 'jp1', 'p02', 22500, 'Belum bayar', 'Selesai', ''),
@@ -166,7 +161,7 @@ INSERT INTO `transaksi` (`id_transaksi`, `tanggal_masuk`, `tanggal_selesai`, `na
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -176,51 +171,51 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `level`) VALUES
 ('admin', 'admin', 0),
-('bug', 'bug', 1),
-('fira', 'fira', 1),
-('toriq', 'toriq', 0);
+('afan', 'afan', 1),
+('karyawan', 'karyawan', 1),
+('thoriq', 'thoriq', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `jenis_cuci`
+-- Indeks untuk tabel `jenis_cuci`
 --
 ALTER TABLE `jenis_cuci`
   ADD PRIMARY KEY (`id_jenis`);
 
 --
--- Indexes for table `karyawan`
+-- Indeks untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`username`);
 
 --
--- Indexes for table `paket`
+-- Indeks untuk tabel `paket`
 --
 ALTER TABLE `paket`
   ADD PRIMARY KEY (`id_paket`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`nama_pelanggan`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
@@ -230,39 +225,39 @@ ALTER TABLE `transaksi`
   ADD KEY `username` (`username`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `admin`
+-- Ketidakleluasaan untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `karyawan`
+-- Ketidakleluasaan untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
   ADD CONSTRAINT `karyawan_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `transaksi`
+-- Ketidakleluasaan untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_paket`) REFERENCES `paket` (`id_paket`) ON DELETE CASCADE ON UPDATE CASCADE,
